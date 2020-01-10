@@ -25,7 +25,7 @@ function App() {
             <TitlebarGridList />
           </Route>
           <Route path="/in-season2">
-            <InSeason />
+            <InSeason month={0}/>
           </Route>
           <Route path="/ingredient-details">
             <IngredientDetails />
