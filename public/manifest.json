@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Saisonal Essen",
+  "name": "Welche Agrarprodukte haben heute Saison?",
+  "author": "Martin Zembaty",
   "icons": [
     {
       "src": "favicon.ico",
