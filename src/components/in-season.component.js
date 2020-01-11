@@ -45,9 +45,15 @@ export default class extends Component {
     return this.state.products.filter(product => {
       return (
         product.type === productType &&
-        product.seasonMainGer[this.state.month] > this.state.seasonThreshold
+        product.seasonMainGer[this.state.month] >= this.state.seasonThreshold
       );
     });
+  }
+
+  handlerSeasonSelected(e) {
+    this.setState(state => ({
+      seasonThreshold: e.target.value
+    }))
   }
 
   render() {
@@ -70,7 +76,7 @@ export default class extends Component {
           </Select>
         </FormControl>
 
-        <TabsFullWidth items={["Saison", "Nebensaison", "Alle"]} />
+        <TabsFullWidth items={["Saison", "Nebensaison", "Alle"]}/>
 
         <br />
 

@@ -1,14 +1,16 @@
 import React from "react";
 import { Tabs, Tab } from "@material-ui/core";
 
-const handleChange = () => {
-  console.info("You clicked the Chip.");
-};
-
 export default props => {
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
     <Tabs
-      value={0}
+      value={value}
       onChange={handleChange}
       indicatorColor="primary"
       textColor="primary"
