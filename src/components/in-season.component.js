@@ -11,7 +11,7 @@ import moment from "moment";
 
 export default class extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.changeMonth = this.changeMonth.bind(this);
     this.state = {
       products,
@@ -20,11 +20,10 @@ export default class extends Component {
           flexGrow: 1
         }
       },
-      month: new Date().getMonth()
+      month: new Date().getMonth(),
+      seasonThreshold: 0
     };
   }
-
-  
 
   componentDidMount() {
     // this.setState({
@@ -39,12 +38,15 @@ export default class extends Component {
   changeMonth(e) {
     this.setState(state => ({
       month: e.target.value
-    }))
+    }));
   }
 
-  filterProducts(products, month, productType) {
-    return products.filter(product => {
-      return product.type === productType && product.seasonMainGer[month] > 0;
+  filterProducts(productType) {
+    return this.state.products.filter(product => {
+      return (
+        product.type === productType &&
+        product.seasonMainGer[this.state.month] > this.state.seasonThreshold
+      );
     });
   }
 
@@ -61,8 +63,10 @@ export default class extends Component {
             onChange={this.changeMonth}
           >
             {moment.months().map((month, i) => (
-              <MenuItem value={i} key={i}>{month}</MenuItem>)
-              )}
+              <MenuItem value={i} key={i}>
+                {month}
+              </MenuItem>
+            ))}
           </Select>
         </FormControl>
 
@@ -73,22 +77,14 @@ export default class extends Component {
         <GridListImageSmall
           title="Gemüse"
           // items={this.state.vegetablesInSeason}
-          items={this.filterProducts(
-            this.state.products,
-            this.state.month,
-            "vegetable"
-          )}
+          items={this.filterProducts("vegetable")}
         />
 
         <br />
 
         <GridListImageSmall
           title="Früchte"
-          items={this.filterProducts(
-            this.state.products,
-            this.state.month,
-            "fruit"
-          )}
+          items={this.filterProducts("fruit")}
         />
       </div>
     );
