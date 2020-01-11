@@ -6,6 +6,7 @@ import Welcome from "./components/welcome.component";
 import TitlebarGridList from "./components/season-list.component";
 import InSeason from "./components/in-season.component";
 import IngredientDetails from "./components/ingredient-details.component";
+import SimpleGrow from "./components/animation.component";
 
 
 
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route path="/ingredient-details">
             <IngredientDetails />
+          </Route>
+          <Route path="/ani">
+            <SimpleGrow />
           </Route>
         </Switch>
       </Router>

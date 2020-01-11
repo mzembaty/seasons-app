@@ -1,7 +1,7 @@
 import React from "react";
 import MenuIcon from "@material-ui/icons/Menu";
-import SearchIcon from "@material-ui/icons/Search";
-import InputBase from "@material-ui/core/InputBase";
+// import SearchIcon from "@material-ui/icons/Search";
+// import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
 
 import {
@@ -81,7 +81,7 @@ export default () => {
           <Typography className={classes.title} variant="h6" noWrap>
             Saisonales Essen
           </Typography>
-          <div className={classes.search}>
+          {/* <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
@@ -93,7 +93,7 @@ export default () => {
               }}
               inputProps={{ "aria-label": "search" }}
             />
-          </div>
+          </div> */}
         </Toolbar>
       </AppBar>
     )
