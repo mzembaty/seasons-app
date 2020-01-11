@@ -6,7 +6,8 @@ import {
   Box,
   makeStyles
 } from "@material-ui/core";
-import {Link} from "react-router-dom"
+import { Link as RouterLink } from 'react-router-dom';
+import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -19,6 +20,21 @@ const useStyles = makeStyles(theme => ({
   },
   itemTitel: {
     wordBreak: "break-all"
+  },
+  link: {
+    transform: "translateZ(0)",
+    boxShadow: "0 0 1 rgba(0, 0, 0, 0)",
+    backfaceVisibility: "hidden",
+    transitionDuration: "0.3s",
+    transitionProperty: "transform",
+    '&:hover': {
+      transform: "scale(1.1)"
+    },
+    linkText: {
+      '&:hover': {
+        textDecoration: "none"
+      }
+    }
   }
 }));
 
@@ -33,20 +49,20 @@ export default props => {
 
         <Grid container item xs={12} spacing={3}>
           {props.items.map(item => (
-            <Grid item xs={4} key={item.name} zeroMinWidth>
-              <Link to="/ingredient-details">
+            <Grid item xs={4} key={item.name} zeroMinWidth className={classes.link}>
+              <Link to="/ingredient-details" component={RouterLink} color="textPrimary">
                 <img
                   src={item.img.imgBig}
                   height="100"
                   alt={item.name}
                   className={classes.image}
                 />
+                <Typography variant="subtitle1" component="h5" color="inherit" >
+                  <Box fontWeight={"bold"} className={classes.itemTitel} hover="none">
+                    {item.name}
+                  </Box>
+                </Typography>
               </Link>
-              <Typography variant="subtitle1" component="h5">
-                <Box fontWeight={"bold"} className={classes.itemTitel}>
-                  {item.name}
-                </Box>
-              </Typography>
             </Grid>
           ))}
         </Grid>

@@ -6,9 +6,9 @@ import TabsFullWidth from "./tabs-full-width.component";
 // mock data
 import products from "./mock-data/products-agriculture";
 import GridListImageSmall from "./grid-list-image-small.component";
-import { FormControl, Select, MenuItem } from "@material-ui/core";
+import { FormControl, Select, MenuItem, Paper } from "@material-ui/core";
 import moment from "moment";
-import localization from 'moment/locale/de'
+import localization from "moment/locale/de";
 
 export default class extends Component {
   constructor(props) {
@@ -27,7 +27,7 @@ export default class extends Component {
   }
 
   componentDidMount() {
-    moment().locale("de", localization)
+    moment().locale("de", localization);
   }
 
   changeMonth(e) {
@@ -48,45 +48,45 @@ export default class extends Component {
   handlerSeasonSelected(e) {
     this.setState(state => ({
       seasonThreshold: e.target.value
-    }))
+    }));
   }
 
   render() {
-    
     return (
       <div className={this.state.classes.root}>
         <AppHeader />
-        <FormControl variant="outlined">
-          <Select
-            aria-label="month-selector"
-            id="month-selector"
-            value={this.state.month}
-            onChange={this.changeMonth}
-          >
-            {moment.months().map((month, i) => (
-              <MenuItem value={i} key={i}>
-                {month}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
+        <Paper elevation={3}>
+          <FormControl variant="outlined">
+            <Select
+              aria-label="month-selector"
+              id="month-selector"
+              value={this.state.month}
+              onChange={this.changeMonth}
+            >
+              {moment.months().map((month, i) => (
+                <MenuItem value={i} key={i}>
+                  {month}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
 
-        <TabsFullWidth items={["Saison", "Nebensaison", "Alle"]}/>
+          <TabsFullWidth items={["Saison", "Nebensaison", "Alle"]} />
+        </Paper>
+        <Paper elevation={1}>
+          <GridListImageSmall
+            title="Gemüse"
+            // items={this.state.vegetablesInSeason}
+            items={this.filterProducts("vegetable")}
+          />
 
-        <br />
+          <br />
 
-        <GridListImageSmall
-          title="Gemüse"
-          // items={this.state.vegetablesInSeason}
-          items={this.filterProducts("vegetable")}
-        />
-
-        <br />
-
-        <GridListImageSmall
-          title="Früchte"
-          items={this.filterProducts("fruit")}
-        />
+          <GridListImageSmall
+            title="Früchte"
+            items={this.filterProducts("fruit")}
+          />
+        </Paper>
       </div>
     );
   }
