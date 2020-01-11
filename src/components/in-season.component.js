@@ -21,7 +21,7 @@ export default class extends Component {
         }
       },
       month: new Date().getMonth(),
-      seasonThreshold: 0
+      seasonThreshold: 25
     };
   }
 
