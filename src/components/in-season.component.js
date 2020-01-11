@@ -8,6 +8,7 @@ import products from "./mock-data/products-agriculture";
 import GridListImageSmall from "./grid-list-image-small.component";
 import { FormControl, Select, MenuItem } from "@material-ui/core";
 import moment from "moment";
+import localization from 'moment/locale/de'
 
 export default class extends Component {
   constructor(props) {
@@ -26,13 +27,7 @@ export default class extends Component {
   }
 
   componentDidMount() {
-    // this.setState({
-    //   vegetablesInSeason: this.filterProducts(
-    //     this.state.vegetablesInSeason,
-    //     this.state.month,
-    //     "fruit"
-    //   )
-    // });
+    moment().locale("de", localization)
   }
 
   changeMonth(e) {
@@ -57,7 +52,7 @@ export default class extends Component {
   }
 
   render() {
-    // console.log(new Intl.DateTimeFormat().format(this.state.month))
+    
     return (
       <div className={this.state.classes.root}>
         <AppHeader />
