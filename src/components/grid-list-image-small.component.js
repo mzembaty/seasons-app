@@ -41,16 +41,15 @@ const useStyles = makeStyles(theme => ({
 export default props => {
   const classes = useStyles();
   return (
-    <Grid container spacing={1}>
       <Container>
         <Typography component="h2" variant="h5" gutterBottom color="primary">
           <Box fontWeight={800}>{props.title}</Box>
         </Typography>
 
-        <Grid container item xs={12} spacing={3}>
+        <Grid container item spacing={3}>
           {props.items.map(item => (
-            <Grid item xs={4} key={item.name} zeroMinWidth className={classes.link}>
-              <Link to="/ingredient-details" component={RouterLink} color="textPrimary">
+            <Grid item xs={4} md={2} key={item.name} zeroMinWidth className={classes.link}>
+              <Link to={`/ingredient-details/${item.id}`} component={RouterLink} color="textPrimary">
                 <img
                   src={item.img.imgBig}
                   height="100"
@@ -67,6 +66,5 @@ export default props => {
           ))}
         </Grid>
       </Container>
-    </Grid>
   );
 };

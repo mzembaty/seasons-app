@@ -52,6 +52,7 @@ export const productTypes = ["vegetables" ,"fruits"]
 
 const productsAgriculture = [
   {
+    id: 0,
     name: "Artischocken",
     img: {
       imgBig: artichoke,
@@ -63,6 +64,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 1,
     name: "Auberginen",
     img: {
       imgBig: eggplant,
@@ -73,6 +75,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 2,
     name: "Blumenkohl",
     img: {
       imgBig: cauliflower,
@@ -83,6 +86,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 3,
     name: "Bohnen",
     img: {
       imgBig: beans,
@@ -93,6 +97,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 4,
     name: "Brokkoli",
     img: {
       imgBig: broccoli,
@@ -103,6 +108,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 5,
     name: "Chicorée",
     img: {
       imgBig: chicoree,
@@ -113,6 +119,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 6,
     name: "Chinakohl",
     img: {
       imgBig: "",
@@ -123,6 +130,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 7,
     name: "Dicke Bohnen",
     img: {
       imgBig: "",
@@ -133,6 +141,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 8,
     name: "Eisbergsalat",
     img: {
       imgBig: "",
@@ -143,6 +152,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 9,
     name: "Endivien",
     img: {
       imgBig: "",
@@ -153,6 +163,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 10,
     name: "Erbsen",
     img: {
       imgBig: peas,
@@ -163,6 +174,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 11,
     name: "Feldsalat",
     img: {
       imgBig: "",
@@ -173,6 +185,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 12,
     name: "Fenchel",
     img: {
       imgBig: fennel,
@@ -183,6 +196,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 13,
     name: "Gemüsepaprika",
     img: {
       imgBig: paprikaGreen,
@@ -193,6 +207,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 14,
     name: "Grünkohl",
     img: {
       imgBig: kale,
@@ -203,6 +218,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 15,
     name: "Salatgurke",
     img: {
       imgBig: cucumbers,
@@ -213,6 +229,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 16,
     name: "Kohlrabi",
     img: {
       imgBig: kohlrabi,
@@ -223,6 +240,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 17,
     name: "Kopfsalat",
     img: {
       imgBig: lettuce,
@@ -233,6 +251,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 18,
     name: "Kürbis",
     img: {
       imgBig: pumpkin,
@@ -243,6 +262,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 19,
     name: "Schnittsalat",
     img: {
       imgBig: leafLettuce,
@@ -253,6 +273,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 20,
     name: "Mangold",
     img: {
       imgBig: chard,
@@ -263,6 +284,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 21,
     name: "Möhren",
     img: {
       imgBig: carrots,
@@ -273,6 +295,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 22,
     name: "Porree",
     img: {
       imgBig: leeks,
@@ -283,6 +306,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 23,
     name: "Radicchio",
     img: {
       imgBig: radicchio,
@@ -293,6 +317,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 24,
     name: "Radieschen",
     img: {
       imgBig: radish2,
@@ -303,6 +328,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 25,
     name: "Rettich",
     img: {
       imgBig: radish,
@@ -313,6 +339,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 26,
     name: "Rhabarber",
     img: {
       imgBig: rhubarb,
@@ -323,6 +350,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 27,
     name: "Rosenkohl",
     img: {
       imgBig: brusselSprouts,
@@ -333,6 +361,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 28,
     name: "Rote Beete",
     img: {
       imgBig: beetroots,
@@ -343,6 +372,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 29,
     name: "Rotkohl",
     img: {
       imgBig: cabbageRed,
@@ -353,6 +383,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 30,
     name: "Rucola",
     img: {
       imgBig: rocketSalad,
@@ -363,6 +394,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 31,
     name: "Schwarzwurzeln",
     img: {
       imgBig: salsifies,
@@ -373,6 +405,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 32,
     name: "Spargel",
     img: {
       imgBig: asparagus,
@@ -383,6 +416,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 33,
     name: "Spinat",
     img: {
       imgBig: spinach,
@@ -393,6 +427,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 34,
     name: "Wirsing",
     img: {
       imgBig: cabbageSavoy,
@@ -403,6 +438,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 35,
     name: "Spitzkohl",
     img: {
       imgBig: cabbagePointed,
@@ -413,6 +449,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 36,
     name: "Sellerie",
     img: {
       imgBig: celery,
@@ -423,6 +460,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 37,
     name: "Tomaten",
     img: {
       imgBig: tomatoe,
@@ -433,6 +471,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 38,
     name: "Weißkohl",
     img: {
       imgBig: cabbageWhite,
@@ -443,6 +482,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 39,
     name: "Zucchini",
     img: {
       imgBig: zucchini,
@@ -453,6 +493,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 40,
     name: "Zwiebel",
     img: {
       imgBig: onion,
@@ -463,6 +504,7 @@ const productsAgriculture = [
     type: "vegetable"
   },
   {
+    id: 41,
     name: "Ananas",
     img: {
       imgBig: pineapple,
@@ -473,7 +515,8 @@ const productsAgriculture = [
     type: "fruit"
   },
   {
-    name: "Apfle",
+    id: 42,
+    name: "Apfel",
     img: {
       imgBig: apple,
       imgSmall: apple,

@@ -2,13 +2,12 @@ import React, { Component } from "react";
 // import { makeStyles } from "@material-ui/core/styles";
 import AppHeader from "./app-header.component";
 import TabsFullWidth from "./tabs-full-width.component";
-
-// mock data
-import products from "./mock-data/products-agriculture";
 import GridListImageSmall from "./grid-list-image-small.component";
 import { FormControl, Select, MenuItem, Paper } from "@material-ui/core";
 import moment from "moment";
-import localization from "moment/locale/de";
+
+// mock data
+import products from "./mock-data/products-agriculture";
 
 export default class extends Component {
   constructor(props) {
@@ -27,7 +26,6 @@ export default class extends Component {
   }
 
   componentDidMount() {
-    moment().locale("de", localization);
   }
 
   changeMonth(e) {
@@ -73,7 +71,7 @@ export default class extends Component {
 
           <TabsFullWidth items={["Saison", "Nebensaison", "Alle"]} />
         </Paper>
-        <Paper elevation={1}>
+        <Paper elevation={0}>
           <GridListImageSmall
             title="Gemüse"
             // items={this.state.vegetablesInSeason}
