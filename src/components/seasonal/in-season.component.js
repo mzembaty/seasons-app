@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 // import { makeStyles } from "@material-ui/core/styles";
-import AppHeader from "./app-header.component";
 import TabsFullWidth from "./tabs-full-width.component";
 import GridListImageSmall from "./grid-list-image-small.component";
 import { FormControl, Select, MenuItem, Paper } from "@material-ui/core";
 import moment from "moment";
 
 // mock data
-import products from "./mock-data/products-agriculture";
+import products from "../mock-data/products-agriculture";
 
 export default class extends Component {
   constructor(props) {
@@ -52,7 +51,6 @@ export default class extends Component {
   render() {
     return (
       <div className={this.state.classes.root}>
-        <AppHeader />
         <Paper elevation={3}>
           <FormControl variant="outlined">
             <Select

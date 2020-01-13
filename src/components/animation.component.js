@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Switch from "@material-ui/core/Switch";
 import products from "./mock-data/products-agriculture";
-import GridListImageSmall from "./grid-list-image-small.component";
+import GridListImageSmall from "./seasonal/grid-list-image-small.component";
 import Grow from "@material-ui/core/Grow";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import { Paper } from "@material-ui/core";

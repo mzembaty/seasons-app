@@ -9,7 +9,7 @@ import indigo from "@material-ui/core/colors/indigo";
 
 import { Link } from "react-router-dom";
 
-import logo from "../logo.png";
+import logo from "../../logo.png";
 
 function Copyright() {
   return (

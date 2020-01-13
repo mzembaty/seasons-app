@@ -7,17 +7,17 @@ const recipes = [
     img: bowle,
     ingredients: [
       {
-        name: "Tomate",
+        id: 37,
         amount: "250",
         measurement: "g"
       },
       {
-        name: "Salatgurke",
+        id: 15,
         amount: "100",
         measurement: "g"
       },
       {
-        name: "Schnittsalat",
+        id: 19,
         amount: "200",
         measurement: "g"
       }
@@ -36,27 +36,27 @@ const recipes = [
     img: bakedVegetables,
     ingredients: [
       {
-        name: "Kartoffel",
+        id: 1,
         amount: "250",
         measurement: "g"
       },
       {
-        name: "Brokkoli",
+        id: 4,
         amount: "100",
         measurement: "g"
       },
       {
-        name: "Zwiebel",
+        id: 40,
         amount: "250",
         measurement: "g"
       },
       {
-        name: "Basilikum",
+        id: 2,
         amount: "25",
         measurement: "g"
       },
       {
-        name: "Käse",
+        id: 2,
         amount: "75",
         measurement: "g"
       }
@@ -80,17 +80,17 @@ const recipes = [
     img: bowle,
     ingredients: [
       {
-        name: "Tomate",
+        id: 37,
         amount: "250",
         measurement: "g"
       },
       {
-        name: "Salatgurke",
+        id: 15,
         amount: "100",
         measurement: "g"
       },
       {
-        name: "Schnittsalat",
+        id: 19,
         amount: "200",
         measurement: "g"
       }
@@ -109,27 +109,27 @@ const recipes = [
     img: bakedVegetables,
     ingredients: [
       {
-        name: "Kartoffel",
+        id: 1,
         amount: "250",
         measurement: "g"
       },
       {
-        name: "Brokkoli",
+        id: 4,
         amount: "100",
         measurement: "g"
       },
       {
-        name: "Zwiebel",
+        id: 40,
         amount: "250",
         measurement: "g"
       },
       {
-        name: "Basilikum",
+        id: 2,
         amount: "25",
         measurement: "g"
       },
       {
-        name: "Käse",
+        id: 2,
         amount: "75",
         measurement: "g"
       }

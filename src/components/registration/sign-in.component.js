@@ -16,7 +16,7 @@ import Container from "@material-ui/core/Container";
 import indigo from "@material-ui/core/colors/indigo";
 import grey from "@material-ui/core/colors/grey";
 
-import logo from "../logo.png";
+import logo from "../../logo.png";
 
 function Copyright() {
   return (
@@ -116,12 +116,12 @@ export default function SignIn() {
           </Link>
           <Grid container>
             <Grid item xs>
-              <Link href="#" variant="body2">
+              <Link to="/login" variant="body2">
                 Forgot password?
               </Link>
             </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link to="/login" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>

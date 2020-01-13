@@ -1,10 +1,10 @@
 import React from "react";
+import {Link} from "react-router-dom"
 import { makeStyles } from "@material-ui/core/styles";
 import {
   IconButton,
   GridListTile,
-  GridListTileBar,
-  ButtonGroup
+  GridListTileBar
 } from "@material-ui/core";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
@@ -36,7 +36,7 @@ export default function MediaCard(props) {
         style={{ height: "auto" }}
         title={props.media.name}
         actionIcon={
-          <ButtonGroup aria-label="primary button group">
+          <div aria-label="primary button group">
             <IconButton
               aria-label={`add to favourites `}
               className={classes.icon}
@@ -46,13 +46,14 @@ export default function MediaCard(props) {
             <IconButton aria-label={`share`} className={classes.icon}>
               <ShareIcon />
             </IconButton>
+            <Link to="/shopping-list/1">
             <IconButton
               aria-label={`add to shopping list`}
               className={classes.icon}
             >
               <AddShoppingCartIcon />
-            </IconButton>
-          </ButtonGroup>
+            </IconButton></Link>
+          </div>
         }
       />
     </GridListTile>
