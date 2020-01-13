@@ -3,7 +3,7 @@ import ItemForm from "./item-form";
 import Item from "./item";
 import { Container, List, Button, Paper, makeStyles } from "@material-ui/core";
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   deleteAllBtn: {
@@ -57,7 +57,7 @@ function loadStorage() {
 export default function ShoppingList() {
   const [items, setItems] = useState(loadStorage());
   const classes = useStyles();
-  let { topicId } = useParams();
+  // let { topicId } = useParams();
 
   const addItem = text => {
     const newItems = [...items, { text }];
@@ -86,7 +86,7 @@ export default function ShoppingList() {
   return (
     <Container disableGutters maxWidth="sm">
       <Paper>
-        <h1>{topicId}</h1>
+        {/* <h1>{topicId}</h1> */}
         <ItemForm addItem={addItem} />
         <List>
           {items.map((item, index) => (
