@@ -36,19 +36,19 @@ export default function MediaCard(props) {
         style={{ height: "auto" }}
         title={props.media.name}
         actionIcon={
-          <div aria-label="primary button group">
+          <div aria-label={`${props.media.name} buttons`}>
             <IconButton
-              aria-label={`add to favourites `}
+              aria-label={`add ${props.media.name} to favourites `}
               className={classes.icon}
             >
               <FavoriteIcon />
             </IconButton>
-            <IconButton aria-label={`share`} className={classes.icon}>
+            <IconButton aria-label={`share ${props.media.name}`} className={classes.icon}>
               <ShareIcon />
             </IconButton>
             <Link to="/shopping-list/1">
             <IconButton
-              aria-label={`add to shopping list`}
+              aria-label={`add ${props.media.name} ingredients to shopping list`}
               className={classes.icon}
             >
               <AddShoppingCartIcon />
