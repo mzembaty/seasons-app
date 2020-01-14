@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+// import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { ThemeProvider } from "@material-ui/core";
 import { createMuiTheme } from '@material-ui/core/styles';
-import cyan from '@material-ui/core/colors/cyan';
 import amber from '@material-ui/core/colors/amber';
+import {BrowserRouter as Router} from "react-router-dom";
 
 const theme = createMuiTheme({
     palette: {
@@ -19,7 +19,9 @@ const theme = createMuiTheme({
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
+    <Router>
     <App />
+    </Router>
   </ThemeProvider>,
   document.getElementById("root")
 );

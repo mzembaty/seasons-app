@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import ItemForm from "./item-form";
 import Item from "./item";
-import { Container, List, Button, Paper, makeStyles } from "@material-ui/core";
+import { Container, List, Button, Paper, makeStyles, CssBaseline } from "@material-ui/core";
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 import { useParams } from "react-router-dom";
 import products from "../mock-data/products-agriculture";
+import AbsoluteWrapper from "../absolute-wrapper.component";
 
 const useStyles = makeStyles(theme => ({
   deleteAllBtn: {
@@ -93,12 +94,11 @@ export default function ShoppingList() {
     localStorage.clear();
   };
 
-
   // share API
-  let itemsString = JSON.stringify(items)
-  const URL = `https://saisonal-essen.netlify.com/${itemsString}`
-  console.log(URL)
-  
+  let itemsString = JSON.stringify(items);
+  const URL = `https://saisonal-essen.netlify.com/${itemsString}`;
+  console.log(URL);
+
   const shareMe = () => {
     if (navigator.share) {
       navigator
@@ -111,7 +111,7 @@ export default function ShoppingList() {
         .catch(error => console.log("Error sharing", error));
       console.log("Share");
     }
-  }
+  };
 
   useEffect(() => {
     if (ingredientsJson) {
@@ -130,31 +130,34 @@ export default function ShoppingList() {
   }, []);
 
   return (
-    <Container disableGutters maxWidth="sm">
-      <Paper>
-        <ItemForm addItem={addItem} />
-        <List>
-          {items.map((item, index) => (
-            <Item
-              key={index}
-              index={index}
-              item={item}
-              completeItem={completeItem}
-              removeItem={removeItem}
-            />
-          ))}
-        </List>
-        <Button
-          className={classes.deleteAllBtn}
-          variant="outlined"
-          // color="secondary"
-          endIcon={<HighlightOffIcon />}
-          onClick={deleteAll}
-        >
-          Alles Löschen
-        </Button>
-        { navigator.share && <Button onClick={shareMe}>shareMe</Button>}
-      </Paper>
-    </Container>
+    <AbsoluteWrapper>
+      <CssBaseline />
+      <Container disableGutters maxWidth="sm">
+        <Paper>
+          <ItemForm addItem={addItem} />
+          <List>
+            {items.map((item, index) => (
+              <Item
+                key={index}
+                index={index}
+                item={item}
+                completeItem={completeItem}
+                removeItem={removeItem}
+              />
+            ))}
+          </List>
+          <Button
+            className={classes.deleteAllBtn}
+            variant="outlined"
+            // color="secondary"
+            endIcon={<HighlightOffIcon />}
+            onClick={deleteAll}
+          >
+            Alles Löschen
+          </Button>
+          {navigator.share && <Button onClick={shareMe}>shareMe</Button>}
+        </Paper>
+      </Container>
+    </AbsoluteWrapper>
   );
 }

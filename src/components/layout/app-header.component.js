@@ -8,7 +8,8 @@ import { Typography, AppBar, Toolbar } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
+    margin:0
   },
   menuButton: {
     marginRight: theme.spacing(2)

@@ -6,6 +6,8 @@ import { Link, useParams } from "react-router-dom";
 import ImgGrid from "./img-grid.component";
 import products from "../mock-data/products-agriculture";
 import recipes from "../mock-data/recipes";
+import AbsoluteWrapper from "../absolute-wrapper.component";
+import { CssBaseline } from "@material-ui/core";
 
 // function findIngredientRecipe(ingredientId) {
 //   recipes.map(recipe => {
@@ -15,8 +17,11 @@ import recipes from "../mock-data/recipes";
 // }
 
 function findIngredientRecipe(ingredientId) {
-  return recipes.filter(recipe =>
-    recipe.ingredients.filter(ingredient => ingredient.id === ingredientId).length > 0)
+  return recipes.filter(
+    recipe =>
+      recipe.ingredients.filter(ingredient => ingredient.id === ingredientId)
+        .length > 0
+  );
 }
 
 export default function IngredientDetails() {
@@ -24,10 +29,11 @@ export default function IngredientDetails() {
   id = parseInt(id);
   const product = products.filter(product => product.id === id)[0];
 
-  const ingredientProducts = findIngredientRecipe(id)
+  const ingredientProducts = findIngredientRecipe(id);
 
   return (
-    <div>
+    <AbsoluteWrapper>
+      <CssBaseline />
       <Link to="/in-season">
         <ArrowBack />
       </Link>
@@ -35,6 +41,6 @@ export default function IngredientDetails() {
       <IngredientHeader product={product} />
 
       <ImgGrid items={ingredientProducts} />
-    </div>
+    </AbsoluteWrapper>
   );
 }

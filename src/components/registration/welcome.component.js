@@ -10,6 +10,7 @@ import indigo from "@material-ui/core/colors/indigo";
 import { Link } from "react-router-dom";
 
 import logo from "../../logo.png";
+import AbsoluteWrapper from "../absolute-wrapper.component";
 
 function Copyright() {
   return (
@@ -51,6 +52,7 @@ export default function Welcome() {
   const classes = useStyles();
 
   return (
+    <AbsoluteWrapper>
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
@@ -91,5 +93,6 @@ export default function Welcome() {
         <Copyright />
       </Box>
     </Container>
+    </AbsoluteWrapper>
   );
 }

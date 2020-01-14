@@ -17,6 +17,7 @@ import indigo from "@material-ui/core/colors/indigo";
 import grey from "@material-ui/core/colors/grey";
 
 import logo from "../../logo.png";
+import AbsoluteWrapper from "../absolute-wrapper.component";
 
 function Copyright() {
   return (
@@ -62,7 +63,8 @@ export default function SignIn() {
   const classes = useStyles();
 
   return (
-    <Container component="main" maxWidth="xs">
+    <AbsoluteWrapper>
+    <Container maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
         <img src={logo} alt="logo"></img>
@@ -132,5 +134,6 @@ export default function SignIn() {
         <Copyright />
       </Box>
     </Container>
+    </AbsoluteWrapper>
   );
 }
