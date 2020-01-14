@@ -35,6 +35,9 @@ function App() {
           <Route path="/ani">
             <SimpleGrow />
           </Route>
+          <Route exact path="/shopping-list/:ingredientsJson">
+            <ShoppingList />
+          </Route>
           <Route path="/shopping-list">
             <ShoppingList />
           </Route>

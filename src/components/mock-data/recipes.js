@@ -3,6 +3,7 @@ import bakedVegetables from "../../img/recipes/bake-baked-basil.jpg"
 
 const recipes = [
   {
+    id: 0,
     name: "Europäischer Salat",
     img: bowle,
     ingredients: [
@@ -32,6 +33,7 @@ const recipes = [
     cooktime: 0
   },
   {
+    id: 1,
     name: "Gemüsegretain",
     img: bakedVegetables,
     ingredients: [
@@ -76,6 +78,7 @@ const recipes = [
     cooktime: 45
   },
   {
+    id: 2,
     name: "Europäischer Salat",
     img: bowle,
     ingredients: [
@@ -105,6 +108,7 @@ const recipes = [
     cooktime: 0
   },
   {
+    id: 3,
     name: "Gemüsegretain",
     img: bakedVegetables,
     ingredients: [

@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ItemForm from "./item-form";
 import Item from "./item";
 import { Container, List, Button, Paper, makeStyles } from "@material-ui/core";
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import products from "../mock-data/products-agriculture";
 
 const useStyles = makeStyles(theme => ({
   deleteAllBtn: {
@@ -46,18 +47,26 @@ function loadStorage() {
   } else return [];
 }
 
-// if (storageAvailable("localStorage")) {
-//   console.log("Storage there");
-//   let loadedItems = loadStorage()
-//   setItems(loadedItems)
-// } else {
-//   console.log("Storage NOT there");
-// }
+function parseIngredients(ingredientsJson) {
+  if (ingredientsJson) {
+    let ingredients = JSON.parse(ingredientsJson);
+    // console.log(ingredients);
+    return addProductNameToIngredients(ingredients);
+  }
+}
+
+function addProductNameToIngredients(ingredients) {
+  return ingredients.map(ingredient => {
+    let foundProduct = products.filter(product => product.id === ingredient.id);
+    ingredient.name = foundProduct[0].name;
+    return ingredient;
+  });
+}
 
 export default function ShoppingList() {
-  const [items, setItems] = useState(loadStorage());
+  let [items, setItems] = useState(loadStorage());
   const classes = useStyles();
-  // let { topicId } = useParams();
+  let { ingredientsJson } = useParams();
 
   const addItem = text => {
     const newItems = [...items, { text }];
@@ -81,12 +90,28 @@ export default function ShoppingList() {
 
   const deleteAll = () => {
     setItems([]);
+    localStorage.clear();
   };
+
+  useEffect(() => {
+    if (ingredientsJson) {
+      // Update the document title using the browser API
+      let ingredients = parseIngredients(ingredientsJson);
+      let newItems = items;
+      ingredients.map(ingredient => {
+        newItems = newItems.concat({
+          text: `${ingredient.name} ${ingredient.amount} ${ingredient.measurement}`
+        });
+        setItems(newItems);
+        localStorage.setItem("items", JSON.stringify(newItems));
+        return null;
+      });
+    }
+  }, []);
 
   return (
     <Container disableGutters maxWidth="sm">
       <Paper>
-        {/* <h1>{topicId}</h1> */}
         <ItemForm addItem={addItem} />
         <List>
           {items.map((item, index) => (

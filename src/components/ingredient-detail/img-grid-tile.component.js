@@ -46,7 +46,7 @@ export default function MediaCard(props) {
             <IconButton aria-label={`share ${props.media.name}`} className={classes.icon}>
               <ShareIcon />
             </IconButton>
-            <Link to="/shopping-list/1">
+            <Link to={`/shopping-list/${JSON.stringify(props.media.ingredients)}`}>
             <IconButton
               aria-label={`add ${props.media.name} ingredients to shopping list`}
               className={classes.icon}
