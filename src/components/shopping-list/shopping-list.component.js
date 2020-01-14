@@ -153,7 +153,7 @@ export default function ShoppingList() {
         >
           Alles Löschen
         </Button>
-        <Button onClick={shareMe}>shareMe</Button>
+        { navigator.share && <Button onClick={shareMe}>shareMe</Button>}
       </Paper>
     </Container>
   );
