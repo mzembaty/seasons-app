@@ -63,23 +63,6 @@ function addProductNameToIngredients(ingredients) {
   });
 }
 
-const URL = "https://saisonal-essen.netlify.com/";
-
-// share API
-function shareMe() {
-  if (navigator.share) {
-    navigator
-      .share({
-        title: "SEASONS - Einkaufsliste",
-        text: "Die Einkaufsliste die ich erstellt habe.",
-        url: URL
-      })
-      .then(() => console.log("Successful share"))
-      .catch(error => console.log("Error sharing", error));
-      console.log("Share")
-  }
-}
-
 export default function ShoppingList() {
   let [items, setItems] = useState(loadStorage());
   const classes = useStyles();
@@ -109,6 +92,26 @@ export default function ShoppingList() {
     setItems([]);
     localStorage.clear();
   };
+
+
+  // share API
+  let itemsString = JSON.stringify(items)
+  const URL = `https://saisonal-essen.netlify.com/${itemsString}`
+  console.log(URL)
+  
+  const shareMe = () => {
+    if (navigator.share) {
+      navigator
+        .share({
+          title: "SEASONS - Einkaufsliste",
+          text: "Die Einkaufsliste die ich erstellt habe.",
+          url: URL
+        })
+        .then(() => console.log("Successful share"))
+        .catch(error => console.log("Error sharing", error));
+      console.log("Share");
+    }
+  }
 
   useEffect(() => {
     if (ingredientsJson) {
