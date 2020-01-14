@@ -10,7 +10,9 @@ import amber from '@material-ui/core/colors/amber';
 
 const theme = createMuiTheme({
     palette: {
-      primary: cyan,
+      primary: {
+        main: "#009688"
+      },
       secondary: amber,
     },
   });
