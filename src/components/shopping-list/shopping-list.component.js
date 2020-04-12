@@ -1,22 +1,12 @@
 import React, { useState, useEffect } from "react";
 import ItemForm from "./item-form";
 import Item from "./item";
-import { Container, List, Button, Paper, makeStyles, CssBaseline } from "@material-ui/core";
-import HighlightOffIcon from "@material-ui/icons/HighlightOff";
+import { Container, List, Button, Paper, CssBaseline } from "@material-ui/core";
 import { useParams } from "react-router-dom";
 import products from "../mock-data/products-agriculture";
 import AbsoluteWrapper from "../absolute-wrapper.component";
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
+import DeleteAllDialog from "./delete-all-dialog";
 
-const useStyles = makeStyles(theme => ({
-  deleteAllBtn: {
-    margin: "1rem"
-  }
-}));
 
 function storageAvailable(type) {
   let storage;
@@ -72,10 +62,7 @@ function addProductNameToIngredients(ingredients) {
 
 export default function ShoppingList() {
   let [items, setItems] = useState(loadStorage());
-  const classes = useStyles();
   let { ingredientsJson } = useParams();
-
-  const [open, setOpen] = React.useState(false);
 
   const addItem = text => {
     const newItems = [...items, { text }];
@@ -100,17 +87,7 @@ export default function ShoppingList() {
   const deleteAll = () => {
     setItems([]);
     localStorage.clear();
-    handleClose();
   };
-
-
-const handleClickOpen = () => {
-  setOpen(true);
-};
-
-const handleClose = () => {
-  setOpen(false);
-};
 
   // share API
   let itemsString = JSON.stringify(items);
@@ -164,35 +141,8 @@ const handleClose = () => {
               />
             ))}
           </List>
-          <div>
-            <Button variant="outlined"
-            className={classes.deleteAllBtn}
-            onClick={handleClickOpen}
-            endIcon={<HighlightOffIcon />}>
-              Alles Löschen
-            </Button>
-            <Dialog
-              open={open}
-              onClose={handleClose}
-              aria-labelledby="alert-dialog-title"
-              aria-describedby="alert-dialog-description"
-            >
-              <DialogTitle id="alert-dialog-title">{"Einkaufsliste löschen?"}</DialogTitle>
-              <DialogContent>
-                <DialogContentText id="alert-dialog-description">
-                  Möchten Sie wirklich alle EInträge in der Einkaufsliste löschen?
-                </DialogContentText>
-              </DialogContent>
-              <DialogActions>
-                <Button onClick={handleClose} color="primary" autoFocus>
-                  Oh Gott, NEIN!
-                </Button>
-                <Button onClick={deleteAll} color="primary">
-                  Alles Löschen
-                </Button>
-              </DialogActions>
-            </Dialog>
-          </div>
+
+          <DeleteAllDialog onClick={deleteAll} text={"Alles Löschen"} />
 
           {navigator.share && <Button onClick={deleteAll}>shareMe</Button>}
         </Paper>
